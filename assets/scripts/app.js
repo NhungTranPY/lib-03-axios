@@ -60,6 +60,7 @@ async function fetchPosts() {
     const response = await axios.get(
       'https://jsonplaceholder.typicode.com/posts'
     );
+    // console.log(response);
     const listOfPosts = response.data;
     for (const post of listOfPosts) {
       const postEl = document.importNode(postTemplate.content, true);
@@ -89,7 +90,7 @@ async function createPost(title, content) {
 
   const response = await axios.post(
     'https://jsonplaceholder.typicode.com/posts',
-    fd
+    post
   );
   console.log(response);
 }
